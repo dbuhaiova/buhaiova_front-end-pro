@@ -62,7 +62,7 @@ let balanceMore = users.filter(function(element) {
 let phoneNumbers = balanceMore.map(function(element) {
   return element.phone
 })
-console.log(`Номери телефонів: ${phoneNumbers}`);
+console.log(phoneNumbers);
 let sum = 0
 users.forEach(function(element) {
   let balance = element.balance.replace(',', '').replace('$', '');
