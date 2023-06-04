@@ -18,18 +18,3 @@
     top:calc(50% - 50px);
     left:calc(50% - 50px);
   }
-  .spinner::before{
-    border-top-color:magenta;
-    animation-duration:4s;
-    top:2px;
-    bottom:2px;
-    left:2px;
-    right:2px;
-  }
-  .spinner::after{
-    border-top-color:cyan;
-    top:8px;
-    bottom:8px;
-    left:8px;
-    right:8px;
-  }
