@@ -1,0 +1,23 @@
+#teddyBear{
+    width: 300px;
+    height: 350px;
+}
+#buyButton{
+    padding: 10px 20px;
+    color: white;
+    background-color: green;
+    position: absolute;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+#errorContainer{
+    display: none;
+    text-align: center;
+    padding-top: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    background-color: red;
+    color: white;
+    width: 200px;
+    height: 40px;
+}

@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Document</title>
+</head>
+<body>
+    <img src="./images/91oxSXgVD6L._AC_SX679_.jpg" alt="teddy-bear" id="teddyBear">
+    <button id="buyButton">Купити</button>
+
+    <div id="orderForm">
+        <h2>Оформлення замовлення</h2>
+        <form>
+          <label for="name">ПІБ:</label>
+          <input type="text" id="name" required>
+          <br>
+          <label for="city">Місто:</label>
+          <select id="city" required>
+            <option value="">Оберіть місто</option>
+            <option value="Київ">Київ</option>
+            <option value="Дніпро">Дніпро</option>
+            <option value="Одеса">Одеса</option>
+            <option value="Львів">Львів</option>
+            <option value="Харків">Харків</option>
+          </select>
+          <br>
+          <label for="shipping">Склад Нової пошти:</label>
+          <input type="text" id="shipping" required>
+          <br>
+          <label for="quantity">Кількість продукції:</label>
+          <input type="number" id="quantity" required>
+          <br>
+          <label for="payment">Спосіб оплати:</label>
+<input type="radio" id="payment1" name="Спосіб" value="Післяплата" />
+<label for="payment1">Післяплата</label>
+<input type="radio" id="payment2" name="Спосіб" value="Картка" />
+<label for="payment2">Картка</label>
+
+          <br>
+          <label for="comment">Коментар до замовлення:</label>
+          <br>
+          <textarea id="comment"></textarea>
+          <br>
+          <button value="Підтвердити замовлення" id="submitButton">Підтвердити замовлення</button>
+        </form>
+    </div>
+    <div id="errorContainer"></div>
+    <div id="orderDetails">
+        <h2>Інформація про замовлення</h2>
+        <p id="productInfo"></p>
+        <p id="shippingInfo"></p>
+    </div>
+      
+    <script src="index.js"></script>
+</body>
+</html>
