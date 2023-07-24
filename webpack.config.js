@@ -14,6 +14,7 @@ module.exports = {
     hot: true,
   },
   devtool: 'inline-source-map',
+<<<<<<< HEAD
   module: {
     rules: [
       {
@@ -22,4 +23,6 @@ module.exports = {
       },
     ],
   },
+=======
+>>>>>>> fcec634a2c54f538fcd6b4239dfc499ba15144f9
 };
