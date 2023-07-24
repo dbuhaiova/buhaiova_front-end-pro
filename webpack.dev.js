@@ -14,12 +14,4 @@ module.exports = {
     hot: true,
   },
   devtool: 'inline-source-map',
-  module: {
-    rules: [
-      {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        type: 'asset',
-      },
-    ],
-  },
 };
