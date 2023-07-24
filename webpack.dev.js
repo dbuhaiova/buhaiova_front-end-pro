@@ -1,20 +1,22 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js',
   },
+  devServer: {
+    static: path.join(__dirname, 'build'),
+    compress: true,
+    port: 3000,
+    hot: true,
+  },
+  devtool: 'inline-source-map',
   module: {
     rules: [
-      {
-        test: /\.(js)$/,
-        exclude: /node_modules/,
-        use: 'babel-loader',
-      },
+      // No need for babel-loader rules
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
@@ -34,9 +36,4 @@ module.exports = {
       },
     ],
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: './src/index.html',
-    }),
-  ],
 };
