@@ -14,28 +14,4 @@ module.exports = {
     hot: true,
   },
   devtool: 'inline-source-map',
-<<<<<<< HEAD
-=======
-  module: {
-    rules: [
-      {
-        test: /\.(png|jpe?g|gif|svg)$/i,
-        use: [
-          {
-            loader: 'url-loader',
-            options: {
-              limit: 8192,
-            },
-          },
-          {
-            loader: 'image-webpack-loader',
-            options: {
-              disable: true,
-            },
-          },
-        ],
-      },
-    ],
-  },
->>>>>>> fcec634a2c54f538fcd6b4239dfc499ba15144f9
 };
