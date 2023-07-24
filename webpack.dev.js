@@ -16,7 +16,6 @@ module.exports = {
   devtool: 'inline-source-map',
   module: {
     rules: [
-      // No need for babel-loader rules
       {
         test: /\.(png|jpe?g|gif|svg)$/i,
         use: [
