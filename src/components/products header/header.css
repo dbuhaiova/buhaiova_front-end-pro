@@ -1,0 +1,52 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 26px;
+    background-color: #44B26F;
+  }
+  
+  .logo-container {
+    margin-right: auto;
+  }
+  
+  .button-container {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .preview-button {
+    width: 179px;
+    height: 52px;
+    border: none;
+    color: #05BC52;
+    background-color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 10px;
+  }
+  
+  .products-button {
+    width: 179px;
+    height: 52px;
+    border: none;
+    color: #05BC52;
+    background-color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding-left: 10px;
+  }
+  .title{
+    width: 284px;
+height: 77px;
+font-size: 64px;
+color: #FFFFFF;
+font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
