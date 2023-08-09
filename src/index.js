@@ -7,11 +7,12 @@ import './components/Button/button.css';
 import Logo from './logo.js';
 import LogoWhite from './components/ProductsHeader/whiteLogo';
 import Input from './components/Input/input.js';
-import Button from './components/Button/button';
+import Button from './components/Button/button.js';
 import ButtonHeader from './components/Button/buttonHeader.js';
 import "./ProductsPage/products.css"
-import Header from './components/ProductsHeader/header';
-import Body from './components/ProductsBody/body';
+import Header from './components/ProductsHeader/header.js';
+import Body from './components/ProductsBody/body.js';
+import ProductPreview from './components/ProductPreview/ProductPreview';
 
 
 const App = () => {
@@ -31,7 +32,9 @@ const App = () => {
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Header/>
-    <Body/>
+    <App/>
+    <ProductPreview/>
+    {/* <Header/> */}
+    {/* <Body/> */}
   </React.StrictMode>,
 );
