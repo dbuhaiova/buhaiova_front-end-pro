@@ -39,19 +39,25 @@ font-size: 24px;
 margin-bottom: 40px;
 }
 
-
 .password-input-container {
+  display: flex;
+  align-items: center;
   position: relative;
 }
 
-.eye-icon {
+.eye-icon-container {
   position: absolute;
-  top: 30%;
+  top: 35%;
   right: 10px;
-  transform: translateY(-225%);
-  color: #44b26f;
-  font-size: 1.5em;
+  transform: translateY(-50%);
 }
+
+.eye-icon {
+  color: #44b26f;
+  font-size: 38px;
+  cursor: pointer;
+}
+
 .loginLogo{
   margin-bottom: 80px;
 }

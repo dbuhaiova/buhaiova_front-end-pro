@@ -19,21 +19,31 @@ const InputField = ({ type, placeholder, value, onChange, errorMessage }) => {
 
   return (
     <div>
-      <input
-        type={type === 'password' && showPassword ? 'text' : type}
-        className={`input-${type}`}
-        placeholder={placeholder}
-        value={value}
-        onChange={handleChange}
-      />
-      {type === 'password' && (
+      {type === 'password' ? (
         <div className="password-input-container">
-          {showPassword ? (
-            <FaEye className="eye-icon" onClick={togglePasswordVisibility} />
-          ) : (
-            <FaEyeSlash className="eye-icon" onClick={togglePasswordVisibility} />
-          )}
+          <input
+            type={showPassword ? 'text' : 'password'}
+            className={`input-${type}`}
+            placeholder={placeholder}
+            value={value}
+            onChange={handleChange}
+          />
+          <div className="eye-icon-container">
+            {showPassword ? (
+              <FaEyeSlash className="eye-icon" onClick={togglePasswordVisibility} />
+            ) : (
+              <FaEye className="eye-icon" onClick={togglePasswordVisibility} />
+            )}
+          </div>
         </div>
+      ) : (
+        <input
+          type={type}
+          className={`input-${type}`}
+          placeholder={placeholder}
+          value={value}
+          onChange={handleChange}
+        />
       )}
       {errorMessage && <p className="error-message">{errorMessage}</p>}
     </div>

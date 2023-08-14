@@ -16,12 +16,11 @@ import ProductPreview from './containers/ProductPreview/ProductPreview.js';
 import Login from './containers/Login/login.js';
 
 
-
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Login/>
-    <ProductPreview/>
+    {/* <ProductPreview/> */}
     {/* <Header/> */}
     {/* <Body/> */}
   </React.StrictMode>,
