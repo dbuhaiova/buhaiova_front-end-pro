@@ -23,6 +23,24 @@ const ProductPreview = () => {
       price: '25000',
       quantity: 5,
     },
+    {
+      image: picture, 
+      text: 'Ноутбук Lenovo Y50-70 Aluminum Black',
+      price: '25000',
+      quantity: 5,
+    },
+    {
+      image: picture, 
+      text: 'Ноутбук Lenovo Y50-70 Aluminum Black',
+      price: '25000',
+      quantity: 5,
+    },
+    {
+      image: picture, 
+      text: 'Ноутбук Lenovo Y50-70 Aluminum Black',
+      price: '25000',
+      quantity: 5,
+    },
   ];
 
   return (
