@@ -1,1 +1,50 @@
+import React, { useState } from 'react';
+import '../../components/Input/input.css';
+import '../../components/Button/button.css';
+import Logo from '../../logo';
+import InputField from '../../components/Input/input';
+import Button from '../../components/Button/button';
+import '../../index.css';
 
+const Login = () => {
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleLogin = () => {
+    if (!username || !password) {
+      setErrorMessage('Please fill in all fields.');
+      return;
+    }
+    if (username === 'Admin' && password === 'Admin123') {
+      setErrorMessage('');
+    } else {
+      setErrorMessage('Invalid username or password.');
+    }
+  };
+
+  return (
+    <div className="App">
+      <header className="App-header">
+        <div className="centered-container">
+          <Logo />
+          <InputField
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={(newValue) => setUsername(newValue)}
+          errorMessage={errorMessage}/>
+          <InputField
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={(newValue) => setPassword(newValue)}
+          errorMessage={errorMessage}/>
+          <Button onClick={handleLogin}>Login</Button>
+        </div>
+      </header>
+    </div>
+  );
+};
+
+export default Login;

@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './App.css';
 import './components/Input/input.css';
 import './components/Button/button.css';
 import Logo from './logo.js';
@@ -12,28 +11,17 @@ import ButtonHeader from './components/Button/buttonHeader.js';
 import "./ProductsPage/products.css"
 import Header from './components/ProductsHeader/header.js';
 import Body from './components/ProductsBody/body.js';
-import ProductPreview from './components/ProductPreview/ProductPreview';
+import App from './containers/Login/login';
+import ProductPreview from './containers/ProductPreview/ProductPreview.js';
+import Login from './containers/Login/login.js';
 
 
-const App = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <div className="centered-container">
-          <Logo />
-          <Input />
-          <Button>Login</Button>
-        </div>
-      </header>
-    </div>
-  );
-};
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App/>
-    <ProductPreview/>
+    <Login/>
+    {/* <ProductPreview/> */}
     {/* <Header/> */}
     {/* <Body/> */}
   </React.StrictMode>,
