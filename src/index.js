@@ -10,8 +10,7 @@ import Button from './components/Button/button.js';
 import ButtonHeader from './components/Button/buttonHeader.js';
 import "./ProductsPage/products.css"
 import Header from './components/ProductsHeader/header.js';
-import Body from './components/ProductsBody/body.js';
-import App from './containers/Login/login';
+import ProductsTable from './containers/ProductsBody/productsTable.js';
 import ProductPreview from './containers/ProductPreview/ProductPreview.js';
 import Login from './containers/Login/login.js';
 
@@ -19,9 +18,9 @@ import Login from './containers/Login/login.js';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Login/>
+    <ProductsTable/>
+    {/* <Login/> */}
     {/* <ProductPreview/> */}
     {/* <Header/> */}
-    {/* <Body/> */}
   </React.StrictMode>,
 );
