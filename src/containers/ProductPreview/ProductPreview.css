@@ -1,0 +1,15 @@
+.product-preview {
+    background-color: #44B26F;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .product-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  gap: 115px;
+  justify-content: center;
+  }
+  

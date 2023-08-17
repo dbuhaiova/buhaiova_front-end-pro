@@ -1,0 +1,73 @@
+.input-text{
+  width: 277px;
+  height: 56px;
+  background-color: #D9D9D9;
+border: none;
+font-size: 24px;
+margin-bottom: 40px;
+}
+
+.input-text::placeholder {
+color: #44B26F;
+font-size: 14px;
+font-weight: 600;
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+padding-left: 15px;
+
+}
+
+.input-password::placeholder {
+color: #44B26F;
+
+font-size: 14px;
+font-weight: 600;
+line-height: 17px;
+letter-spacing: 0em;
+text-align: left;
+padding-left: 15px;
+}
+
+
+.input-password{
+width: 277px;
+height: 56px;
+background-color: #D9D9D9;
+border: none;
+font-size: 24px;
+margin-bottom: 40px;
+}
+
+.password-input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.eye-icon-container {
+  position: absolute;
+  top: 35%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.eye-icon {
+  color: #44b26f;
+  font-size: 38px;
+  cursor: pointer;
+}
+
+.loginLogo{
+  margin-bottom: 80px;
+}
+.input-error {
+  border-color: #ff0000;
+}
+
+.error-message {
+  color: #ff0000;
+  font-size: 14px;
+  margin-top: 5px;
+  text-align: left;
+}
