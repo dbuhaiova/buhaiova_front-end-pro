@@ -10,17 +10,18 @@ import Button from './components/Button/button.js';
 import ButtonHeader from './components/Button/buttonHeader.js';
 import "./ProductsPage/products.css"
 import Header from './components/ProductsHeader/header.js';
-import AppRouter from './router';
-
+import Body from './components/ProductsBody/body.js';
+import App from './containers/Login/login';
+import ProductPreview from './containers/ProductPreview/ProductPreview.js';
+import Login from './containers/Login/login.js';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <AppRouter/>
-    {/* <ProductsTable/> */}
-    {/* <Login/> */}
+    <Login/>
     {/* <ProductPreview/> */}
     {/* <Header/> */}
+    {/* <Body/> */}
   </React.StrictMode>,
 );
