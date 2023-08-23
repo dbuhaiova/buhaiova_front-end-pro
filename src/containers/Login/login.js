@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import '../../components/Input/input.css';
 import '../../components/Button/button.css';
 import Logo from '../../logo';
@@ -45,7 +46,10 @@ const Login = () => {
             onChange={(newValue) => setPassword(newValue)}
             errorMessage={errorMessage}
           />
-          <Button onClick={handleLogin}>Login</Button>
+          <div>
+          
+          <Button onClick={handleLogin}><Link to="/table">Login</Link></Button>
+          </div>
         </div>
       </header>
     </div>

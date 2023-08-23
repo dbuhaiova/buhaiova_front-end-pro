@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './productsTable.css';
+import '../../components/ProductsHeader/header.css'
 import { BiSortAlt2 } from 'react-icons/bi';
 import { BsFillPencilFill } from 'react-icons/bs';
 import { BiBox } from 'react-icons/bi';
+import Header from '../../components/ProductsHeader/header';
 
 const ProductsTable = () => {
   const [productData, setProductData] = useState([]);
@@ -16,7 +18,9 @@ const ProductsTable = () => {
 
   return (
     <div className="table-center">
+      <Header/>
       <p className="title">Products</p>
+      
       <table>
         <thead>
           <tr>
