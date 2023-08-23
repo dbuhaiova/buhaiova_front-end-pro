@@ -1,24 +1,17 @@
-import React, { useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
-import './input.css';
+import React, { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
+import "./input.css";
 
-const InputField = ({ type, placeholder, value, onChange, errorMessage }) => {
+const Input = () => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
-  const handleChange = (e) => {
-    if (errorMessage) {
-      onChange(e.target.value);
-    } else {
-      onChange(e.target.value);
-    }
-  };
-
   return (
     <div>
+<<<<<<< HEAD
       {type === 'password' ? (
         <div className="password-input-container">
           <input
@@ -46,8 +39,23 @@ const InputField = ({ type, placeholder, value, onChange, errorMessage }) => {
         />
       )}
       {errorMessage && <p className="error-message">{errorMessage}</p>}
+=======
+      <input type="email" className="input-email" placeholder="User name" />
+      <div className="password-input-container">
+        <input
+          type={showPassword ? "text" : "password"}
+          className="input-password"
+          placeholder="Password"
+        />
+        {showPassword ? (
+          <FaEye className="eye-icon" onClick={togglePasswordVisibility} />
+        ) : (
+          <FaEyeSlash className="eye-icon" onClick={togglePasswordVisibility} />
+        )}
+      </div>
+>>>>>>> parent of 8f4cafd4... Fix ProductPreview
     </div>
   );
 };
 
-export default InputField;
+export default Input;

@@ -1,11 +1,5 @@
-import React, { useState } from 'react';
-import '../../components/Input/input.css';
-import '../../components/Button/button.css';
-import Logo from '../../logo';
-import InputField from '../../components/Input/input';
-import Button from '../../components/Button/button';
-import '../../index.css';
 
+<<<<<<< HEAD
 const Login = () => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -53,3 +47,5 @@ const Login = () => {
 };
 
 export default Login;
+=======
+>>>>>>> parent of 8f4cafd4... Fix ProductPreview

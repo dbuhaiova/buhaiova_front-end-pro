@@ -1,7 +1,5 @@
-import React from 'react';
-
-const Button = ({ onClick, children }) => {
-  return <button className="login-button" onClick={onClick}>{children}</button>;
+const Button = () => {
+  return <button className="login-button">Login</button>;
 };
 
 export default Button;

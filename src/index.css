@@ -36,8 +36,3 @@ code {
   font-size: calc(10px + 2vmin);
   color: white;
 }
-.error-message {
-  color: red;
-  font-size: 14px;
-  margin-top: 8px;
-}
