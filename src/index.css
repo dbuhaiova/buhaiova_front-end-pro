@@ -13,8 +13,11 @@ code {
 }
 .App {
   text-align: center;
+  color: #F5F5F5;
 }
-
+a{
+  text-decoration: none;
+}
 .centered-container {
   padding-top: 70px;
   display: flex;
@@ -35,4 +38,9 @@ code {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 8px;
 }

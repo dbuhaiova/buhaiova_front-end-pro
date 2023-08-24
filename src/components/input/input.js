@@ -1,61 +1,54 @@
-import React, { useState } from "react";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import "./input.css";
+import React, { useState } from 'react';
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import './input.css';
 
-const Input = () => {
+const InputField = ({ type, placeholder, value, onChange, errorMessage }) => {
   const [showPassword, setShowPassword] = useState(false);
 
   const togglePasswordVisibility = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
 
+  const handleChange = (e) => {
+    if (errorMessage) {
+      onChange(e.target.value);
+    } else {
+      onChange(e.target.value);
+    }
+  };
+
+  const showError = value === '' && errorMessage; 
+
   return (
     <div>
-<<<<<<< HEAD
       {type === 'password' ? (
-        <div className="password-input-container">
+        <div className={`password-input-container ${showError ? 'input-error' : ''}`}>
+          {showPassword ? (
+            <FaEye className="eye-icon" onClick={togglePasswordVisibility} />
+          ) : (
+            <FaEyeSlash className="eye-icon" onClick={togglePasswordVisibility} />
+          )}
           <input
             type={showPassword ? 'text' : 'password'}
-            className={`input-${type}`}
+            className={`input-${type} ${showError ? 'input-error' : ''}`}
             placeholder={placeholder}
             value={value}
             onChange={handleChange}
           />
-          <div className="eye-icon-container">
-            {showPassword ? (
-              <FaEyeSlash className="eye-icon" onClick={togglePasswordVisibility} />
-            ) : (
-              <FaEye className="eye-icon" onClick={togglePasswordVisibility} />
-            )}
-          </div>
         </div>
       ) : (
         <input
           type={type}
-          className={`input-${type}`}
+          className={`input-${type} ${showError ? 'input-error' : ''}`}
           placeholder={placeholder}
           value={value}
           onChange={handleChange}
         />
       )}
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-=======
-      <input type="email" className="input-email" placeholder="User name" />
-      <div className="password-input-container">
-        <input
-          type={showPassword ? "text" : "password"}
-          className="input-password"
-          placeholder="Password"
-        />
-        {showPassword ? (
-          <FaEye className="eye-icon" onClick={togglePasswordVisibility} />
-        ) : (
-          <FaEyeSlash className="eye-icon" onClick={togglePasswordVisibility} />
-        )}
-      </div>
->>>>>>> parent of 8f4cafd4... Fix ProductPreview
+      {showError && <p className="error-message">{errorMessage}</p>}
     </div>
   );
 };
 
-export default Input;
+
+export default InputField;
