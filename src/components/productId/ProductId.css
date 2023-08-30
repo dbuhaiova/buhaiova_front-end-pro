@@ -11,10 +11,11 @@
   .product-name{
     display: inline-block;
   }
-  .header {
+  .header-product-id {
     display: flex;
     align-items: baseline;
 width: 100%;
+padding: 35px;
   }
   
   .logo {

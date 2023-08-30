@@ -8,7 +8,7 @@ import './header.css'
 
 const Header = () => {
   return (
-    <header className="header">
+    <header id="header">
       <div className="logo-container">
         <LogoWhite />
       </div>
