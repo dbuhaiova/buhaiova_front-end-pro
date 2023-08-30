@@ -9,13 +9,12 @@
     align-items: center;
   }
   
-  .product-image {
+  #product-image{
     width: 209px;
     height: 139px;
     display: block;
-    margin: 0 auto;
   }
-  
+ 
   .product-text {
     text-align: center;
     margin: 10px 0;
