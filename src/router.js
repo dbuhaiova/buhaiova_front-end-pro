@@ -4,6 +4,7 @@ import ProductPreview from './components/ProductPreview/ProductPreview.js';
 import Login from './containers/Login/login.js';
 import PrivateRoute from './privateRoutes.js';
 import ProductId from './components/productId/ProductId.js';
+import ModalWindow from './components/ModalWindow/ModalWindow.js';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 const AppRouter = () => (
@@ -14,6 +15,8 @@ const AppRouter = () => (
           <Route path="/table" element={<ProductsTable/>}/>
           <Route path="/preview" element={<ProductPreview/>}/>
           <Route path='/product/:id' element={<ProductId/>}/>
+          <Route path='/modal' element={<ModalWindow/>}/>
+
         </Route>
         <Route path="*" element={<div>404 not found</div>}/>
     </Routes>

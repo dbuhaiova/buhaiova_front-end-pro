@@ -18,7 +18,7 @@ const ProductId = () => {
   return (
     <div className="product-id-container">
       
-        <div className="header">
+        <div className="header-product-id">
           <LogoWhite />
         </div>
         <div className="product-details">
