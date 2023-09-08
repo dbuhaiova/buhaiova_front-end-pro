@@ -19,7 +19,7 @@ const ProductPreview = () => {
       <ProductPreviewHeader />
       <div className="product-cards">
         {productData.map(product => (
-          <Link key={product.id} to={`/product/${product.id}`} className="product-link">
+          <Link key={product.id} to='/product/${product.id}' className="product-link">
             <ProductCard
               id={product.id}
               image={product.Image}

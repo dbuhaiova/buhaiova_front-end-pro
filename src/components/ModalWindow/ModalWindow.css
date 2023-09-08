@@ -14,7 +14,7 @@
   .modal-window {
     background-color: white;
     width: 429px;
-    height: 532px;
+    height: 632px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
     text-align: center;
   }
@@ -91,7 +91,9 @@
     justify-content: center;
     align-items: center;
   }
-  
+  .input-error {
+    border: 1px solid red;
+  }
   .cancel-button-window {
     background-color: #726969;
     width: 116px;

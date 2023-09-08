@@ -3,8 +3,8 @@ import { BiSortAlt2 } from 'react-icons/bi';
 import { BsFillPencilFill } from 'react-icons/bs';
 import { BiBox } from 'react-icons/bi';
 import Header from '../../components/ProductsHeader/header';
-import Modal from '../../components/Modal/Modal.js'; // Import the Modal component
-import ModalWindow from '../../components/ModalWindow/ModalWindow.js'; // Import the ModalWindow component
+import Modal from '../../components/Modal/Modal.js';
+import ModalWindow from '../../components/ModalWindow/ModalWindow.js';
 import './productsTable.css';
 
 const ProductsTable = () => {
@@ -12,7 +12,7 @@ const ProductsTable = () => {
   const [selectedProductId, setSelectedProductId] = useState(null);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isEditModalVisible, setIsEditModalVisible] = useState(false);
-  const [isAddModalVisible, setIsAddModalVisible] = useState(false); // Add state for Add Product modal
+  const [isAddModalVisible, setIsAddModalVisible] = useState(false);
   const [modalTitle, setModalTitle] = useState('');
 
   useEffect(() => {
@@ -80,9 +80,7 @@ const ProductsTable = () => {
           isOpen={isEditModalVisible}
           onClose={hideEditModal}
           onSave={() => {
-            // Handle editing the product data here
-            // You can implement the logic to save the data
-            hideEditModal(); // Close the modal after editing
+            hideEditModal();
           }}
         />
       )}
@@ -92,9 +90,7 @@ const ProductsTable = () => {
           isOpen={isAddModalVisible}
           onClose={hideAddModal}
           onSave={() => {
-            // Handle adding a new product data here
-            // You can implement the logic to save the data
-            hideAddModal(); // Close the modal after adding
+            hideAddModal();
           }}
         />
       )}
@@ -118,14 +114,14 @@ const ProductsTable = () => {
           </tr>
         </thead>
         <tbody>
-          {productData.map(product => (
-            <tr key={product.id}>
-              <td>{product.ID}</td>
-              <td>{product.Category}</td>
-              <td>{product.Name}</td>
-              <td>{product.Quantity}</td>
-              <td>{product.Price}</td>
-              <td>
+        {productData.map(product => (
+  <tr key={product.id}>
+    <td>{product.id}</td> 
+    <td>{product.Category}</td>
+    <td>{product.Name}</td>
+    <td>{product.Quantity}</td>
+    <td>{product.Price}</td>
+    <td>
                 <BsFillPencilFill className="icon" onClick={() => showEditModal(product.id)} />
                 <BiBox className="icon" onClick={() => showModal(product.id)}/>
               </td>
