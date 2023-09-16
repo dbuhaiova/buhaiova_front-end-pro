@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './ModalWindow.css';
 
-const ModalWindow = ({ title, isOpen, onClose, onSave }) => {
+const ModalWindow = ({ title, isOpen, onClose, onSave, productToEdit }) => {
   const [category, setCategory] = useState('');
   const [name, setName] = useState('');
   const [quantity, setQuantity] = useState('');
@@ -13,24 +13,48 @@ const ModalWindow = ({ title, isOpen, onClose, onSave }) => {
   const [quantityError, setQuantityError] = useState('');
   const [priceError, setPriceError] = useState('');
 
+  useEffect(() => {
+    if (isOpen && productToEdit) {
+      setCategory(productToEdit.Category || '');
+      setName(productToEdit.Name || '');
+      setQuantity(productToEdit.Quantity || '');
+      setPrice(productToEdit.Price || '');
+      setDescription(productToEdit.Description || '');
+    } else {
+      setCategory('');
+      setName('');
+      setQuantity('');
+      setPrice('');
+      setDescription('');
+    }
+  }, [isOpen, productToEdit]);
+
   const handleCategoryChange = (e) => {
     setCategory(e.target.value);
-    setCategoryError('');
+    if (e.target.value.trim() !== '') {
+      setCategoryError('');
+    }
   };
 
   const handleNameChange = (e) => {
     setName(e.target.value);
-    setNameError('');
+    if (e.target.value.trim() !== '') {
+      setNameError('');
+    }
   };
 
   const handleQuantityChange = (e) => {
     setQuantity(e.target.value);
-    setQuantityError('');
+    if (e.target.value.trim() !== '') {
+      setQuantityError('');
+    }
   };
 
   const handlePriceChange = (e) => {
     setPrice(e.target.value);
-    setPriceError('');
+    if (e.target.value.trim() !== '') {
+      setPriceError('');
+    }
   };
 
   const handleDescriptionChange = (e) => {
@@ -45,25 +69,26 @@ const ModalWindow = ({ title, isOpen, onClose, onSave }) => {
 
     let hasError = false;
 
-    if (!category) {
-      setCategoryError('Category is required');
+    if (!category.trim()) {
+      setCategoryError('This field is required');
       hasError = true;
     }
 
-    if (!name) {
-      setNameError('Name is required');
+    if (!name.trim()) {
+      setNameError('This field is required');
       hasError = true;
     }
 
-    if (!quantity) {
-      setQuantityError('Quantity is required');
+    if (!quantity.trim()) {
+      setQuantityError('This field is required');
       hasError = true;
     }
 
-    if (!price) {
-      setPriceError('Price is required');
+    if (!price.trim()) {
+      setPriceError('This field is required');
       hasError = true;
     }
+
     if (hasError) {
       return;
     }
@@ -76,21 +101,39 @@ const ModalWindow = ({ title, isOpen, onClose, onSave }) => {
       Description: description,
     };
 
-    fetch('https://64de69e7825d19d9bfb29517.mockapi.io/products', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(product),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Product added:', data);
-        onSave();
+    if (productToEdit) {
+      fetch(`https://64de69e7825d19d9bfb29517.mockapi.io/products/${productToEdit.id}`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(product),
       })
-      .catch((error) => {
-        console.error('Error adding product:', error);
-      });
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Product edited:', data);
+          onSave();
+        })
+        .catch((error) => {
+          console.error('Error editing product:', error);
+        });
+    } else {
+      fetch('https://64de69e7825d19d9bfb29517.mockapi.io/products', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(product),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Product added:', data);
+          onSave();
+        })
+        .catch((error) => {
+          console.error('Error adding product:', error);
+        });
+    }
   };
 
   return (
@@ -104,23 +147,43 @@ const ModalWindow = ({ title, isOpen, onClose, onSave }) => {
         </div>
         <div className="modal-window-content">
           <label className="field-label">Category</label>
-          <input className={`text-input ${categoryError ? 'input-error' : ''}`} value={category} onChange={handleCategoryChange} />
+          <input
+            className={`text-input ${categoryError ? 'input-error' : ''}`}
+            value={category}
+            onChange={handleCategoryChange}
+          />
           {categoryError && <div className="error-message">{categoryError}</div>}
 
           <label className="field-label">Name</label>
-          <input className={`text-input ${nameError ? 'input-error' : ''}`} value={name} onChange={handleNameChange} />
+          <input
+            className={`text-input ${nameError ? 'input-error' : ''}`}
+            value={name}
+            onChange={handleNameChange}
+          />
           {nameError && <div className="error-message">{nameError}</div>}
 
           <label className="field-label">Quantity</label>
-          <input className={`text-input ${quantityError ? 'input-error' : ''}`} value={quantity} onChange={handleQuantityChange} />
+          <input
+            className={`text-input ${quantityError ? 'input-error' : ''}`}
+            value={quantity}
+            onChange={handleQuantityChange}
+          />
           {quantityError && <div className="error-message">{quantityError}</div>}
 
           <label className="field-label">Price</label>
-          <input className={`text-input ${priceError ? 'input-error' : ''}`} value={price} onChange={handlePriceChange} />
+          <input
+            className={`text-input ${priceError ? 'input-error' : ''}`}
+            value={price}
+            onChange={handlePriceChange}
+          />
           {priceError && <div className="error-message">{priceError}</div>}
 
           <label className="field-label">Description</label>
-          <textarea className="text-input description-input" value={description} onChange={handleDescriptionChange} />
+          <textarea
+            className="text-input description-input"
+            value={description}
+            onChange={handleDescriptionChange}
+          />
 
           <div className="button-container-window">
             <button className="cancel-button-window" onClick={onClose}>
